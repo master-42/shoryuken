@@ -11,22 +11,32 @@
     </script>
     
     <div id="my_view">
-        <h1>{{ title }}</h1>
+        <h1>{{ num }}</h1>
         <button @click="arttir"> {{ btnTitle }}</button>
+        <h1>{{ oe_writer }}</h1>
     </div>
     
     <script>
         var model = {  
         title: "Hello",
-        btnTitle: "Tıkla"
+        btnTitle: "Tıkla",
+        num: 0
         }
         var myViewModel = new Vue({
         el: '#my_view',
         data: model,
         methods: {
-         arttir() {
-             this.title = "X";
-         }
+          arttir()
+          {
+            this.num++;
+            console.log("Hello");
+          }
+        },
+        computed: {
+          oe_writer(){
+            // console.log((this.num & 1) === 1," <-");
+            return (((this.num & 1) === 0) ? "Çift" : "Tek");
+          }
         }
         });
     </script>
