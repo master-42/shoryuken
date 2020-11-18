@@ -3,42 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VUE JS</title>
+    <title>Shoryuken ⏫ ✊</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+      .fakeimg {
+        height: 10em;
+        width: 10em;
+        background: #aaa;
+      }
+      .ryu {
+        height: 20em;
+        /* width: 15em; */
+        /* background-color: transparent; */
+        /* background-color: rgba(0,255,255,0.1); */
+      }
+      .center {
+        margin: 0 auto;
+        text-align: center;
+      }
+      .jShow {
+        background-color: rgba(30, 150, 230, 0.3);
+      }
+    </style>
   </head>
   <body>
-
-    </script>
-    
-    <div id="my_view">
-        <h1>{{ num }}</h1>
-        <button @click="arttir"> {{ btnTitle }}</button>
-        <h1>{{ oe_writer }}</h1>
+    <div class="jumbotron text-center">
+      <h1 class="display-3">Hello</h1>
     </div>
-    
+    <div>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col" id="app">
+          <h3 class="center">hi?</h3>
+          <!-- <div class="fakeimg center" ></div> -->
+          <button @click="playclip" style="background-color: transparent; border: 0px;">
+            <img src="/res/shoryuken.gif" alt="ryu_fist" class="ryu center" />
+          </button>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+    <!-- <div id="app">
+      <button>Play Audio</button>
+    </div> -->
+    <audio>
+      <source src="res/shoryuken.wav" type="audio/wav" />
+    </audio>
+
     <script>
-        var model = {  
-        title: "Hello",
-        btnTitle: "Tıkla",
-        num: 0
-        }
-        var myViewModel = new Vue({
-        el: '#my_view',
-        data: model,
-        methods: {
-          arttir()
-          {
-            this.num++;
-            console.log("Hello");
-          }
+      new Vue({
+        el: "#app",
+        data: {
+          name: "hey",
         },
-        computed: {
-          oe_writer(){
-            // console.log((this.num & 1) === 1," <-");
-            return (((this.num & 1) === 0) ? "Çift" : "Tek");
-          }
-        }
-        });
+        methods: {
+          playclip() {
+            // alert("Worked!");
+            var audio = document.getElementsByTagName("audio")[0];
+            audio.play();
+          },
+        },
+      });
     </script>
-    </body>
+  </body>
 </html>
