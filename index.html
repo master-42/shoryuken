@@ -66,9 +66,13 @@
           <h3 class="center">hi?</h3>
           <!-- <div class="fakeimg center" ></div> -->
           <div class="center">
-            <a @click="playclip">
-              <img src="res/shoryuken.gif" alt="ryu_fist" class="ryu" />
+            <a @click.prevent="playclip()">
+              <!-- <img src="res/shoryuken.webm" alt="ryu_fist" class="ryu" /> -->
+              <video id="ryu_v" class="ryu">
+                <source src="res/shoryuken.webm" type="video/webm" />
+              </video>
             </a>
+            <!-- <button @click="playvideo">Play</button> -->
           </div>
         </div>
         <div class="col"></div>
@@ -77,21 +81,26 @@
     <!-- <div id="app">
       <button>Play Audio</button>
     </div> -->
-    <audio>
+    <!-- <audio>
       <source src="res/shoryuken.wav" type="audio/wav" />
-    </audio>
+    </audio> -->
 
     <script>
       new Vue({
         el: "#app",
         data: {
           name: "hey",
+          sound: new Audio("res/shoryuken.wav"),
         },
         methods: {
           playclip() {
-            // alert("Worked!");
-            var audio = document.getElementsByTagName("audio")[0];
-            audio.play();
+            this.sound.play();
+            this.playvideo();
+          },
+          playvideo() {
+            $('#ryu_v')[0].play();
+            // let vdoc = document.getElementsByTagName('video')[0];
+            // let vid = document.getElementById("ryu_v"); 
           },
         },
       });
