@@ -45,6 +45,13 @@
       .jShow {
         background-color: rgba(30, 150, 230, 0.3);
       }
+      .cipher {
+        outline: none;
+        border: 0px;
+        box-sizing: none;
+        border-color: transparent;
+        background-color: transparent;
+      }
     </style>
   </head>
   <body>
@@ -57,7 +64,7 @@
         <div class="col" id="app">
           <h3 class="center">hi?</h3>
           <!-- <div class="fakeimg center" ></div> -->
-          <button @click="playclip" style="background-color: transparent; border: 0px;">
+          <button @click="playclip" class="cipher">
             <img src="res/shoryuken.gif" alt="ryu_fist" class="ryu center" />
           </button>
         </div>
