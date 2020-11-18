@@ -53,18 +53,6 @@
         background-color: transparent;
         box-shadow: none;
       }
-      .center:focus  {
-        outline: none;
-        box-shadow: none;
-      }
-      button {
-        border: none;
-        background-color: transparent;
-        outline: none;
-      }
-      button:focus {
-        border: none;
-      }
     </style>
   </head>
   <body>
@@ -78,9 +66,9 @@
           <h3 class="center">hi?</h3>
           <!-- <div class="fakeimg center" ></div> -->
           <div class="center">
-            <button @click="playclip">
+            <a @click="playclip">
               <img src="res/shoryuken.gif" alt="ryu_fist" class="ryu" />
-            </button>
+            </a>
           </div>
         </div>
         <div class="col"></div>
