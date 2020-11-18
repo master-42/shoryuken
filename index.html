@@ -51,6 +51,11 @@
         box-sizing: none;
         border-color: transparent;
         background-color: transparent;
+        box-shadow: none;
+      }
+      .center:focus  {
+        outline: none;
+        box-shadow: none;
       }
     </style>
   </head>
@@ -64,9 +69,11 @@
         <div class="col" id="app">
           <h3 class="center">hi?</h3>
           <!-- <div class="fakeimg center" ></div> -->
-          <button @click="playclip" class="cipher">
-            <img src="res/shoryuken.gif" alt="ryu_fist" class="ryu center" />
-          </button>
+          <div class="center">
+            <button @click="playclip" class="btn-block">
+              <img src="res/shoryuken.gif" alt="ryu_fist" class="ryu" />
+            </button>
+          </div>
         </div>
         <div class="col"></div>
       </div>
